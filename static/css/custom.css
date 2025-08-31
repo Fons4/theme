@@ -1,0 +1,80 @@
+/* static/css/custom.css */
+
+/* 整体页面 */
+body {
+  background-color: #ffe6f2; /* 柔和粉色背景 */
+  font-family: "Comic Sans MS", "Noto Sans SC", "Nunito", sans-serif;
+  color: #4a4a4a; /* 深灰色字体，柔和 */
+  background-image: url("https://i.imgur.com/4NJlZqL.png"); /* 可替换为你自己的樱花背景 */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  line-height: 1.6;
+}
+
+/* 顶部导航栏 */
+.navbar, header {
+  background: rgba(255, 192, 203, 0.8); /* 半透明粉色 */
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid #ff99cc;
+}
+
+/* 链接 */
+a {
+  color: #ff66a3;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ff3385;
+  text-shadow: 0 0 5px #ffb6d9;
+}
+
+/* 标题 */
+h1, h2, h3, h4, h5, h6 {
+  color: #ff4da6;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #ffd6eb;
+}
+
+/* 文章卡片（如果主题支持的话） */
+.article, .post, .card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.article:hover, .post:hover, .card:hover {
+  transform: scale(1.02);
+}
+
+/* 按钮 */
+button, .btn {
+  background: #ff80bf;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background: #ff4da6;
+  box-shadow: 0 0 10px #ff99cc;
+}
+
+/* 页脚 */
+footer {
+  background: rgba(255, 182, 193, 0.9);
+  padding: 15px;
+  text-align: center;
+  border-top: 2px solid #ff99cc;
+  color: #fff;
+  text-shadow: 0 0 4px #ff4da6;
+}
