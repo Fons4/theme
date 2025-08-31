@@ -25,7 +25,6 @@
                 {{- end -}}
             </a>
         </div>
-
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
@@ -37,14 +36,6 @@
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
-
-                {{- /* 社交链接 */ -}}
-                {{- with .Site.Params.social -}}
-                    {{- range $name, $link := . }}
-                        <a class="menu-item" href="{{ $link }}" target="_blank" rel="noopener">{{ $name }}</a>
-                    {{- end -}}
-                {{- end -}}
-
                 {{- if .Site.Menus.main -}}
                     <span class="menu-item delimiter"></span>
                 {{- end -}}
@@ -66,28 +57,28 @@
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
-
                 {{- if hugo.IsMultilingual -}}
-                    <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
-                        <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
-                            {{- if eq .Kind "404" -}}
-                                {{- range .Sites -}}
-                                    {{- $link := printf "%v/404.html" .LanguagePrefix -}}
-                                    <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
-                                        {{- .Language.LanguageName -}}
-                                    </option>
-                                {{- end -}}
-                            {{- else -}}
-                                {{- range .AllTranslations -}}
-                                    <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
-                                        {{- .Language.LanguageName -}}
-                                    </option>
-                                {{- end -}}
+                <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
+                        {{- if eq .Kind "404" -}}
+                            {{- /* https://github.com/dillonzq/LoveIt/issues/378 */ -}}
+                            {{- range .Sites -}}
+                                {{- $link := printf "%v/404.html" .LanguagePrefix -}}
+                                <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
+                                    {{- .Language.LanguageName -}}
+                                </option>
                             {{- end -}}
-                        </select>
-                    </a>
-                {{- end -}}
+                        {{- else -}}
+                            {{- range .AllTranslations -}}
+                                <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
+                                    {{- .Language.LanguageName -}}
+                                </option>
+                            {{- end -}}
+                        {{- end -}}
+                    </select>
+                </a>
+            {{- end -}}
             </div>
         </div>
     </div>
@@ -145,7 +136,6 @@
                     </a>
                 </div>
             {{- end -}}
-
             {{- $currentPage := . -}}
             {{- range .Site.Menus.main -}}
                 {{- $url := .URL | relLangURL -}}
@@ -156,23 +146,16 @@
                     {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
                 </a>
             {{- end -}}
-
-            {{- /* 移动端社交链接 */ -}}
-            {{- with .Site.Params.social -}}
-                {{- range $name, $link := . }}
-                    <a class="menu-item" href="{{ $link }}" target="_blank" rel="noopener">{{ $name }}</a>
-                {{- end -}}
-            {{- end -}}
-
             <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a>
-
             {{- if hugo.IsMultilingual -}}
+
                 <a href="javascript:void(0);" class="menu-item" title="{{ T "selectLanguage" }}">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                     <select class="language-select" onchange="location = this.value;">
                         {{- if eq .Kind "404" -}}
+                            {{- /* https://github.com/dillonzq/LoveIt/issues/378 */ -}}
                             {{- range .Sites -}}
                                 {{- $link := printf "%v/404.html" .LanguagePrefix -}}
                                 <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
