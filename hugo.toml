@@ -636,29 +636,3 @@
     # 是否使用 object-fit-images 来兼容旧式浏览器
     objectFit = false
 
-# 菜单
-[menu]
-
-  [[menu.main]]
-    identifier = "posts"
-    name = "文章"
-    url = "/posts/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "about"
-    name = "关于我"
-    url = "/about/"
-    weight = 20
-
-  [[menu.main]]
-    identifier = "tags"
-    name = "标签"
-    url = "/tags/"
-    weight = 30
-
-  [[menu.main]]
-    identifier = "categories"
-    name = "分类"
-    url = "/categories/"
-    weight = 40
