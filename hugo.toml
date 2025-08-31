@@ -4,6 +4,7 @@
 
 [params]
   googleFonts = ["Ma+Shan+Zheng", "Noto+Sans+SC"]
+  customCSS = ["css/custom.css"]
   # site default theme ["auto", "light", "dark"]
   # 网站默认主题 ["auto", "light", "dark"]
   defaultTheme = "auto"
@@ -27,9 +28,6 @@
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = []
-[params.assets]
-  customCSS = ["css/custom.css"]
-  customJS  = ["js/sakura.js", "js/cursor.js", "js/animate.js"]
 
   # Author config
   # 作者配置
