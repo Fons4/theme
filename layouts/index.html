@@ -9,10 +9,12 @@
             {{- partial "home/profile.html" . -}}
         {{- end -}}
 
-        {{- /* 美化网易云歌单挂件 */ -}}
-        <div class="widget music-widget" style="margin: 1.5em auto; max-width: 400px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h3 style="text-align: center; margin: 0.5em 0; font-size: 1.1em;">-Fons- 喜欢的音乐</h3>
-            <iframe frameborder="0" width="100%" height="380" src="https://music.163.com/outchain/player?type=0&id=7254881471&auto=1&height=380"></iframe>
+        {{- /* 网易云歌单挂件（美观 + 可交互） */ -}}
+        <div class="widget music-widget" style="margin: 1em auto; max-width: 360px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <h3 style="text-align: center; margin: 0.5em 0; font-size: 1em;">-Fons- 喜欢的音乐</h3>
+            <iframe frameborder="0" width="100%" height="300"
+                src="https://music.163.com/outchain/player?type=2&id=7254881471&auto=1&height=300"
+                style="pointer-events: auto;"></iframe>
         </div>
 
         {{- /* Content */ -}}
