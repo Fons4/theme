@@ -209,8 +209,8 @@
   # Social config in home page
   # 主页的社交信息设置
   [params.social]
-    X = "https://x.com/Undefined_Fons"
-    Bilibili = "https://space.bilibili.com/481535183"
+    X = "Undefined_Fons"
+    Bilibili = "481535183"
     GitHub = ""
     Linkedin = ""
     Instagram = ""
