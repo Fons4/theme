@@ -209,9 +209,10 @@
   # Social config in home page
   # 主页的社交信息设置
   [params.social]
+    X = "https://x.com/Undefined_Fons"
+    Bilibili = "https://space.bilibili.com/481535183"
     GitHub = ""
     Linkedin = ""
-    X = "https://x.com/Undefined_Fons"
     Instagram = ""
     Facebook = ""
     Telegram = ""
@@ -270,7 +271,6 @@
     Gitea = ""
     XMPP = ""
     Matrix = ""
-    Bilibili = "https://m.bilibili.com/space?from=headline"
     Discord = ""
     DiscordInvite = ""
     Lichess = ""
