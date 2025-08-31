@@ -25,6 +25,7 @@
                 {{- end -}}
             </a>
         </div>
+
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
@@ -37,8 +38,9 @@
                     </a>
                 {{- end -}}
 
-                {{- if .Site.Params.social -}}
-                    {{- range $name, $link := .Site.Params.social }}
+                {{- /* 社交链接 */ -}}
+                {{- with .Site.Params.social -}}
+                    {{- range $name, $link := . }}
                         <a class="menu-item" href="{{ $link }}" target="_blank" rel="noopener">{{ $name }}</a>
                     {{- end -}}
                 {{- end -}}
@@ -64,26 +66,27 @@
                 <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
+
                 {{- if hugo.IsMultilingual -}}
-                <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
-                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
-                        {{- if eq .Kind "404" -}}
-                            {{- range .Sites -}}
-                                {{- $link := printf "%v/404.html" .LanguagePrefix -}}
-                                <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
-                                    {{- .Language.LanguageName -}}
-                                </option>
+                    <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                        <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
+                            {{- if eq .Kind "404" -}}
+                                {{- range .Sites -}}
+                                    {{- $link := printf "%v/404.html" .LanguagePrefix -}}
+                                    <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
+                                        {{- .Language.LanguageName -}}
+                                    </option>
+                                {{- end -}}
+                            {{- else -}}
+                                {{- range .AllTranslations -}}
+                                    <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
+                                        {{- .Language.LanguageName -}}
+                                    </option>
+                                {{- end -}}
                             {{- end -}}
-                        {{- else -}}
-                            {{- range .AllTranslations -}}
-                                <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
-                                    {{- .Language.LanguageName -}}
-                                </option>
-                            {{- end -}}
-                        {{- end -}}
-                    </select>
-                </a>
+                        </select>
+                    </a>
                 {{- end -}}
             </div>
         </div>
@@ -142,6 +145,7 @@
                     </a>
                 </div>
             {{- end -}}
+
             {{- $currentPage := . -}}
             {{- range .Site.Menus.main -}}
                 {{- $url := .URL | relLangURL -}}
@@ -153,8 +157,9 @@
                 </a>
             {{- end -}}
 
-            {{- if .Site.Params.social -}}
-                {{- range $name, $link := .Site.Params.social }}
+            {{- /* 移动端社交链接 */ -}}
+            {{- with .Site.Params.social -}}
+                {{- range $name, $link := . }}
                     <a class="menu-item" href="{{ $link }}" target="_blank" rel="noopener">{{ $name }}</a>
                 {{- end -}}
             {{- end -}}
