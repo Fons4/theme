@@ -1,0 +1,86 @@
+/* ================================
+   可爱粉色二次元风格 Hugo 样式
+   ================================ */
+
+/* 背景渐变 + 柔和粉色 */
+body {
+  background: linear-gradient(135deg, #ffe6f0 0%, #ffccf2 50%, #ffd6e7 100%);
+  font-family: 'Noto Sans SC', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  cursor: url('/cursor/cat-normal.png'), auto;
+  animation: fadeInBody 1s ease-in;
+}
+
+/* 渐入动画 */
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 文章、侧边栏卡片 */
+.article, .post, .widget, .content {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+  animation: fadeInUp 1s ease;
+}
+
+/* 标题手写风 */
+h1, h2, h3, .post-title {
+  font-family: 'Ma Shan Zheng', cursive;
+  color: #ff6699;
+  text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.6);
+  animation: fadeInTitle 1.2s ease;
+}
+
+/* 标题动画 */
+@keyframes fadeInTitle {
+  0%   { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 上浮渐入 */
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 链接圆润粉色 */
+a {
+  color: #ff6699;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: #ff3366;
+  text-shadow: 0 0 5px rgba(255, 182, 193, 0.8);
+}
+
+/* 导航栏 */
+.navbar, .menu {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  padding: 10px 20px;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* 封面图渐入 */
+.post-cover img {
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.3);
+  animation: fadeInUp 1.5s ease;
+}
+
+/* 页脚 */
+.footer {
+  font-size: 14px;
+  color: #999;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-top: 2px solid #ffccdd;
+}
