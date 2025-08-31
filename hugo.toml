@@ -270,7 +270,7 @@
     Gitea = ""
     XMPP = ""
     Matrix = ""
-    Bilibili = ""
+    Bilibili = "https://m.bilibili.com/space?from=headline"
     Discord = ""
     DiscordInvite = ""
     Lichess = ""
