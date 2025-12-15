@@ -1,4 +1,0 @@
-![头像](static/images/Image_1765816538970.jpg)
-git add static/images/Image_1765816538970.jpg
-git commit -m "move avatar to site static"
-git push
