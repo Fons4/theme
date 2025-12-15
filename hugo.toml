@@ -183,7 +183,7 @@
       gravatarEmail = ""
       # URL of avatar shown in home page
       # 主页显示头像的 URL
-      avatarURL = "https://fonsblog.vercel.app/images/Image_1756494093040.jpg"
+      avatarURL = "https://fonsblog.vercel.app/images/Image_1765816538970.jpg"
       # title shown in home page (HTML format is supported)
       # 主页显示的网站标题 (支持 HTML 格式)
       title = ""
