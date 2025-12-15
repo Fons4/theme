@@ -1,4 +1,4 @@
-![头像](static/images/Image_1765816538970.jpg)
+![头像](/images/Image_1765816538970.jpg)
 git add .
 git commit -m "Add avatar image"
 git push origin main
